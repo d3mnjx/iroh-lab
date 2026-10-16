@@ -29,7 +29,10 @@ self.addEventListener('fetch', event => {
   const url = new URL(event.request.url);
   if (url.origin !== self.location.origin) return;
   if (event.request.mode === 'navigate' && url.href.startsWith(self.registration.scope)) {
-    event.respondWith(caches.open(CACHE).then(cache => cache.match(new URL('./index.html', self.registration.scope))).then(response => response || fetch(event.request)));
+    const requested = new URL(event.request.url);
+    requested.search = ''; requested.hash = '';
+    const shell = ASSETS.has(requested.href) ? requested : new URL('./index.html', self.registration.scope);
+    event.respondWith(caches.open(CACHE).then(cache => cache.match(shell)).then(response => response || fetch(event.request)));
   } else if (ASSETS.has(url.href)) {
     event.respondWith(caches.open(CACHE).then(cache => cache.match(event.request)).then(response => response || fetch(event.request)));
   }

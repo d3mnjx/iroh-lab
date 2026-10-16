@@ -6,6 +6,7 @@ messages, and measure round-trip time. Browser connections are end-to-end
 encrypted and relayed; the UI reads the actual selected Iroh path.
 
 - **Phone app:** https://d3mnjx.github.io/iroh-lab/
+- **Interactive diagram:** https://d3mnjx.github.io/iroh-lab/diagram.html
 - **Repository:** https://github.com/d3mnjx/iroh-lab
 - **Full implementation plan:** [PLAN.md](PLAN.md)
 - **Validation and limits:** [TESTING.md](TESTING.md)

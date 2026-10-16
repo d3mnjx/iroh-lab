@@ -102,3 +102,16 @@ https://d3mnjx.github.io/iroh-lab/, including real message exchange and replacem
 invitations. The original user invitation is still valid; the native peer was
 not restarted for this fix. Existing cached app tabs must close before the new
 service worker takes over.
+
+## Interactive architecture diagram
+
+`web/diagram.html` is a standalone HTML illustration with five selectable flows.
+Chromium and WebKit checks passed for flow selection, node explanations, animation
+pause, mobile width, and navigation under the service worker. Chromium also
+reopened both the diagram and app shell offline. Service-worker navigation now
+serves known HTML assets individually instead of returning the app shell for the
+diagram URL. The diagram contains no live credentials or message data.
+
+The user subsequently confirmed the real iPhone connected, and the sandbox CLI
+received their `hello`. Phone installation and background behavior remain separate
+checks; the diagram does not imply automatic delivery into the assistant chat.
