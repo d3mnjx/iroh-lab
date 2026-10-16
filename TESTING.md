@@ -67,3 +67,31 @@ the Pages workflow ignores Markdown and research-only changes.
 No universal throughput, direct-connect success rate, uptime, or production
 security guarantees are inferred. Ping is a current application round trip,
 not a benchmark. The cached shell works offline; messaging does not.
+
+## iOS connection timeout fix (2026-10-16)
+
+The user reported an iOS 26 / Wi-Fi timeout. Linux WebKit 26.5 reproduced the
+published app's timeout and logged `Unacceptable TLS certificate` for
+`wss://euc1-1.relay.n0.iroh.link./relay`. The same WebKit instance successfully
+opened a verified secure WebSocket to the hostname without its terminal dot.
+
+The browser now normalizes the invitation relay's hostname and uses that relay
+for both its endpoint configuration and the remote address. The minimal preset
+avoids falling back to Iroh's dotted default relay/probe URLs; explicit pairing
+already supplies the peer identity and relay. TLS certificate validation remains
+enabled. The native peer and existing invitation token were left running.
+
+Executed locally after the change:
+
+- 6 Rust unit tests passed, including URL normalization and HTTPS enforcement.
+- All 3 Chromium integration tests passed.
+- WebKit pairing, bidirectional messages, ping, reconnect, invalid-token rejection,
+  and replacement invitation flows passed.
+- The WebKit PWA test verified manifest/cache setup, then failed with the browser's
+  `WebKit encountered an internal error` during emulated-offline page reload.
+  Offline reopening on physical iOS remains unverified; this is separate from
+  the reproduced relay TLS failure and is not reported as a passing test.
+
+Regression checks verify that the browser actually opens relay WebSockets without
+terminal-dot hostnames and emits no corresponding TLS-certificate errors.
+Connection errors now appear next to the pairing controls, not below the chat.

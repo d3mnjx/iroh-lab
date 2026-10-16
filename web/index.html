@@ -31,6 +31,7 @@
           <div class="route" aria-hidden="true"><span>YOUR PHONE</span><i></i><span>SANDBOX</span></div>
           <div id="status-pill" class="status-pill" data-state="idle"><span class="dot"></span><span id="status" role="status">Ready to pair</span></div>
           <p id="status-detail" class="muted">Keep the sandbox running while you connect.</p>
+          <div id="notice" role="alert" hidden></div>
           <form id="pair-form">
             <label for="invitation">Private invitation</label>
             <textarea id="invitation" rows="3" placeholder="Paste your invitation link…" autocomplete="off" autocapitalize="off" spellcheck="false" aria-describedby="invite-hint"></textarea>
@@ -51,7 +52,6 @@
           <p class="conversation-note">Live, temporary messages. Both devices need to be online.</p>
         </section>
       </div>
-      <div id="notice" role="alert" hidden></div>
       <section class="install-note"><div><strong>Make room on your home screen.</strong><p>On iPhone: Share → Add to Home Screen. On Android: use your browser’s install menu.</p></div><button id="install" class="small-button" hidden>Install app ↗</button></section>
       <noscript>This app needs JavaScript and WebAssembly to connect.</noscript>
     </main>

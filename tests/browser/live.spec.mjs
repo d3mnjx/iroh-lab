@@ -8,6 +8,10 @@ function encoded(invite) { return Buffer.from(JSON.stringify(invite)).toString('
 
 test('real browser pairs, exchanges messages both ways, pings, and reconnects', async ({ page }) => {
   const errors = [];
+  const websocketHosts = [];
+  const tlsErrors = [];
+  page.on('websocket', socket => websocketHosts.push(new URL(socket.url()).hostname));
+  page.on('console', message => { if (/unacceptable TLS certificate/i.test(message.text())) tlsErrors.push(message.text()); });
   page.on('pageerror', error => errors.push(error.message));
   const invite = await invitation();
   await page.goto(`./#invite=${encoded(invite)}`);
@@ -33,6 +37,9 @@ test('real browser pairs, exchanges messages both ways, pings, and reconnects', 
   await expect(page.locator('#status')).toHaveText('Connected', { timeout: 55_000 });
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
   expect(errors).toEqual([]);
+  expect(websocketHosts.length).toBeGreaterThan(0);
+  expect(websocketHosts.every(host => !host.endsWith('.'))).toBe(true);
+  expect(tlsErrors).toEqual([]);
   await page.getByRole('button', { name: 'Forget invitation' }).click();
   await expect(page.locator('#status')).toHaveText('Ready to pair');
   await expect(page.locator('#fingerprint')).toBeHidden();
@@ -46,6 +53,7 @@ test('wrong invitation token is rejected', async ({ page }) => {
   await page.getByRole('button', { name: /Connect to sandbox/ }).click();
   await expect(page.locator('#status')).toHaveText('Couldn’t connect', { timeout: 55_000 });
   await expect(page.locator('#notice')).toContainText('Invitation rejected');
+  await expect(page.locator('#notice')).toBeInViewport();
   // A fresh link in the same tab changes only the fragment: no reload required.
   await page.goto(`./#invite=${encoded(await invitation())}`);
   await expect(page).not.toHaveURL(/#invite=/);

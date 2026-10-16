@@ -103,6 +103,18 @@ node node_modules/@playwright/test/cli.js install chromium
 npm run test:browser
 ```
 
+For Safari-engine connection checks, install WebKit and its system dependencies,
+then run:
+
+```bash
+node node_modules/@playwright/test/cli.js install --with-deps webkit
+PLAYWRIGHT_BROWSER=webkit npm run test:browser -- --grep 'real browser|wrong invitation'
+```
+
+This uses desktop Linux WebKit with an iPhone viewport, not an actual iPhone.
+The separate offline-reload test currently encounters a Linux WebKit automation
+error; see TESTING.md. Chromium's offline-shell test passes.
+
 For deployed testing set `PWA_URL=https://d3mnjx.github.io/iroh-lab/`.
 `IROH_TEST_RUNTIME`, `IROH_PEER_BINARY`, and `PLAYWRIGHT_CHROMIUM_EXECUTABLE` can
 select another local test peer/binary/browser. Real network tests depend on
@@ -123,6 +135,9 @@ chat history, or third-party relay traffic is stored in the service-worker cache
 ## Boundaries
 
 - GitHub Pages hosts the app files. Iroh relays carry encrypted peer traffic.
+- The browser uses the relay explicitly carried by the invitation. Its hostname
+  is normalized for Safari TLS validation, and the browser does not enable public
+  address lookup. If the sandbox moves to another relay, obtain a fresh invitation.
 - Both peers must be online. A cached offline app shell cannot send messages.
 - Mobile browsers may suspend an open connection; reconnect after reopening.
 - Invitations grant session access and are kept in memory. Reloading clears them;

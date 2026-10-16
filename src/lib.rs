@@ -65,6 +65,25 @@ pub struct Response {
     pub server_time_ms: u64,
     pub peer: String,
 }
+/// Use a browser TLS hostname while preserving HTTPS and certificate validation.
+/// Iroh's default FQDN spelling has a final dot that WebKit rejects for TLS.
+pub fn browser_relay_url(input: &str) -> anyhow::Result<iroh::RelayUrl> {
+    let relay: iroh::RelayUrl = input.parse()?;
+    let mut url = (*relay).clone();
+    anyhow::ensure!(
+        url.scheme() == "https" && url.username().is_empty() && url.password().is_none(),
+        "Invalid secure relay URL"
+    );
+    if let Some(host) = url
+        .host_str()
+        .and_then(|host| host.strip_suffix('.'))
+        .map(str::to_owned)
+    {
+        url.set_host(Some(&host))?;
+    }
+    Ok(url.into())
+}
+
 pub fn validate_text(text: &str) -> anyhow::Result<()> {
     anyhow::ensure!(!text.trim().is_empty(), "Message is empty");
     anyhow::ensure!(
@@ -84,6 +103,19 @@ mod browser;
 #[cfg(test)]
 mod tests {
     use super::*;
+    #[test]
+    fn browser_relay_uses_a_certificate_hostname_without_disabling_tls() {
+        let url = browser_relay_url("https://relay.example.:8443/").unwrap();
+        assert_eq!(url.as_str(), "https://relay.example:8443/");
+        assert_eq!(
+            browser_relay_url("https://relay.example/")
+                .unwrap()
+                .as_str(),
+            "https://relay.example/"
+        );
+        assert!(browser_relay_url("http://relay.example/").is_err());
+        assert!(browser_relay_url("https://user:password@relay.example/").is_err());
+    }
     #[test]
     fn reject_empty_and_oversized_unicode_messages() {
         assert!(validate_text("  \n").is_err());

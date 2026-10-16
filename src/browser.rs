@@ -3,7 +3,7 @@ use anyhow::{Context, Result};
 use futures_lite::future;
 use gloo_timers::future::TimeoutFuture;
 use iroh::{
-    Endpoint, EndpointAddr, EndpointId, RelayUrl,
+    Endpoint, EndpointAddr, EndpointId, RelayMode,
     endpoint::{Connection, presets},
 };
 use std::time::Duration;
@@ -36,9 +36,15 @@ impl BrowserPeer {
         let invitation: Invitation = serde_json::from_str(&invitation_json).map_err(js_error)?;
         invitation.validate().map_err(js_error)?;
         let id: EndpointId = invitation.endpoint_id.parse().map_err(js_error)?;
-        let relay: RelayUrl = invitation.relay_url.parse().map_err(js_error)?;
-        let address = EndpointAddr::from(id).with_relay_url(relay);
-        let endpoint = Endpoint::bind(presets::N0).await.map_err(js_error)?;
+        let relay = browser_relay_url(&invitation.relay_url).map_err(js_error)?;
+        let address = EndpointAddr::from(id).with_relay_url(relay.clone());
+        // This paired client already has the server's exact relay and identity.
+        // Avoid N0's dotted default relay / lookup URLs in browser TLS requests.
+        let endpoint = Endpoint::builder(presets::Minimal)
+            .relay_mode(RelayMode::Custom(relay.into()))
+            .bind()
+            .await
+            .map_err(js_error)?;
         let connection = match deadline(25_000, async {
             endpoint
                 .connect(address, ALPN)
