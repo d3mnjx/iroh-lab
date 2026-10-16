@@ -38,8 +38,19 @@ connectivity evidence.
 
 ## Hosted verification
 
-The GitHub Pages deployment and tests against its public HTTPS URL are recorded
-below once deployment finishes.
+- [Build/deployment run](https://github.com/d3mnjx/iroh-lab/actions/runs/38905175667)
+  completed successfully for application commit `0729d67`.
+- https://d3mnjx.github.io/iroh-lab/ and its manifest returned HTTP 200 over HTTPS.
+- The same **3 real browser integration tests passed against the published URL**:
+  messaging in both directions and measured ping, reconnect, invalid invitation
+  rejection, manifest/Wasm caching, and offline reopening.
+- The selected path reported by Iroh was `relay`. A local sample application
+  round trip measured 33 ms; this is an observation, not a performance promise.
+- A fresh native process was prepared after testing so the user's phone session
+  starts with clean temporary message history. Its invitation remains local.
+
+Documentation-only commits after the application commit do not trigger a rebuild;
+the Pages workflow ignores Markdown and research-only changes.
 
 ## Still requires the user's phone
 

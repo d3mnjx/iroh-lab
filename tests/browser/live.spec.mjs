@@ -46,6 +46,11 @@ test('wrong invitation token is rejected', async ({ page }) => {
   await page.getByRole('button', { name: /Connect to sandbox/ }).click();
   await expect(page.locator('#status')).toHaveText('Couldn’t connect', { timeout: 55_000 });
   await expect(page.locator('#notice')).toContainText('Invitation rejected');
+  // A fresh link in the same tab changes only the fragment: no reload required.
+  await page.goto(`./#invite=${encoded(await invitation())}`);
+  await expect(page).not.toHaveURL(/#invite=/);
+  await page.getByRole('button', { name: /Connect to sandbox/ }).click();
+  await expect(page.locator('#status')).toHaveText('Connected', { timeout: 55_000 });
 });
 
 test('PWA manifest, cached offline shell, and malformed invitation recovery', async ({ page, context }) => {

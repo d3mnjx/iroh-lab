@@ -172,12 +172,16 @@ window.addEventListener('pagehide', () => stop());
 window.addEventListener('beforeinstallprompt', event => { event.preventDefault(); deferredInstall = event; $('install').hidden = false; });
 $('install').addEventListener('click', async () => { if (!deferredInstall) return; await deferredInstall.prompt(); deferredInstall = null; $('install').hidden = true; });
 window.addEventListener('appinstalled', () => { $('install').hidden = true; });
-if (location.hash) {
+function importFragment() {
+  if (!location.hash) return;
   const fragment = location.hash;
   history.replaceState(null, '', location.pathname + location.search);
+  stop({ forget: true });
   try { preview(parseInvitation(fragment)); notice('Invitation loaded. Connect when your sandbox is ready.'); }
   catch (error) { notice(error.message); }
 }
+window.addEventListener('hashchange', importFragment);
+importFragment();
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker.register('./sw.js').then(registration => {
     const updateNotice = () => notice('An app update is ready. Disconnect and close all app tabs, then reopen to use it.');

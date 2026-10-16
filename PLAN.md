@@ -117,3 +117,20 @@ or the phone's installation/background behavior.
 File transfer, gossip rooms, durable history, push notifications, background
 execution, user accounts, custom relay hosting, and richer document sync remain
 future choices after testing this small end-to-end system.
+
+## Completion record
+
+Implemented and deployed on 2026-10-16. The shared Rust protocol, native peer,
+Wasm adapter, phone UI, PWA caching, invitation/QR flow, and Pages workflow are in
+place. Unit tests, native/Wasm builds, and real browser integration passed.
+The same integration suite passed against the published GitHub Pages URL.
+See TESTING.md for evidence and remaining physical-phone checks.
+
+The native implementation uses bounded request/response streams, with long polling
+for incoming messages. Its operator control listens only on loopback and requires
+the local session token. The detached launcher waits for actual readiness; a
+new process keeps the endpoint key and rotates the invitation token.
+
+Public repository: https://github.com/d3mnjx/iroh-lab
+
+Phone PWA: https://d3mnjx.github.io/iroh-lab/
