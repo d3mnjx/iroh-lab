@@ -46,6 +46,12 @@ connectivity evidence.
   rejection, manifest/Wasm caching, and offline reopening.
 - The selected path reported by Iroh was `relay`. A local sample application
   round trip measured 33 ms; this is an observation, not a performance promise.
+- [Follow-up deployment](https://github.com/d3mnjx/iroh-lab/actions/runs/38905833349)
+  completed successfully for application commit `eef14ab`. Its published-page
+  test passed for rejecting a bad invitation and accepting a valid replacement
+  in the same open tab without reloading.
+- Restart validation confirmed the same endpoint ID, a changed token, rejection
+  of the previous invitation, and a successful fresh connection from Pages.
 - A fresh native process was prepared after testing so the user's phone session
   starts with clean temporary message history. Its invitation remains local.
 
