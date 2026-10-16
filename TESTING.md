@@ -95,3 +95,10 @@ Executed locally after the change:
 Regression checks verify that the browser actually opens relay WebSockets without
 terminal-dot hostnames and emits no corresponding TLS-certificate errors.
 Connection errors now appear next to the pairing controls, not below the chat.
+
+Published validation: [deployment run 38915484869](https://github.com/d3mnjx/iroh-lab/actions/runs/38915484869)
+succeeded for commit `35f8692`. Both WebKit connection tests then passed against
+https://d3mnjx.github.io/iroh-lab/, including real message exchange and replacement
+invitations. The original user invitation is still valid; the native peer was
+not restarted for this fix. Existing cached app tabs must close before the new
+service worker takes over.
