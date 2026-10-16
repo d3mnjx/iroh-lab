@@ -1,0 +1,18 @@
+{
+  "name": "iroh-lab",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "bash scripts/build-web.sh",
+    "serve": "node scripts/serve.mjs",
+    "test": "node --test tests/invitation.test.mjs",
+    "test:browser": "node node_modules/@playwright/test/cli.js test",
+    "qr": "node scripts/qr.mjs",
+    "peer:start": "node scripts/start-peer.mjs"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.61.1",
+    "qrcode": "1.5.4"
+  }
+}

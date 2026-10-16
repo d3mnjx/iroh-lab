@@ -1,0 +1,328 @@
+{
+  "accessed_date_utc": "2026-10-16",
+  "note": "Retrieved source bodies were temporary research material, not retained in the repository. Hashes identify retrieval content, not a full archival snapshot. Inspected does not mean compiled or executed.",
+  "sources": [
+    {
+      "url": "https://docs.iroh.computer/about/changelog.md",
+      "accessed_date_utc": "2026-10-16",
+      "bytes": 175914,
+      "sha256": "3ce57d6bcea46085d135074de645a93afbd54dada7e867deb49a0eb6cc39e596",
+      "review": "collected for reference"
+    },
+    {
+      "url": "https://docs.iroh.computer/about/faq.md",
+      "accessed_date_utc": "2026-10-16",
+      "bytes": 30598,
+      "sha256": "0ea73769da3384f6287ee95b8c98dafcc1dc1a69958a2c004ef471d5e2f6b5cf",
+      "review": "inspected (relevant sections or metadata)"
+    },
+    {
+      "url": "https://docs.iroh.computer/about/release-policy.md",
+      "accessed_date_utc": "2026-10-16",
+      "bytes": 4523,
+      "sha256": "c3747ee34300214a9551dce7eb7b1f77f4471e03d2385a457ec7a624a8950308",
+      "review": "inspected (relevant sections or metadata)"
+    },
+    {
+      "url": "https://docs.iroh.computer/compatibility.md",
+      "accessed_date_utc": "2026-10-16",
+      "bytes": 4745,
+      "sha256": "6cc9f6405e64d3867f97e8662b9d5f9e362d80330a0879ff8d353f3adece5412",
+      "review": "inspected (relevant sections or metadata)"
+    },
+    {
+      "url": "https://docs.iroh.computer/concepts/address-lookup.md",
+      "accessed_date_utc": "2026-10-16",
+      "bytes": 8317,
+      "sha256": "2253e9d2b5788c1432af691cc4212fd04676b4b620cc42ca8cf000a22b0954b0",
+      "review": "inspected (relevant sections or metadata)"
+    },
+    {
+      "url": "https://docs.iroh.computer/concepts/endpoints.md",
+      "accessed_date_utc": "2026-10-16",
+      "bytes": 6251,
+      "sha256": "cca3469e46a3f147bcd1638057b418ed0bda1ad43e60ee33431b29521b01de28",
+      "review": "inspected (relevant sections or metadata)"
+    },
+    {
+      "url": "https://docs.iroh.computer/concepts/nat-traversal.md",
+      "accessed_date_utc": "2026-10-16",
+      "bytes": 5555,
+      "sha256": "840ca9a266d1489ac679ddf98489fefa39484fb0cef83c02ab159e5d2bfe5ed2",
+      "review": "inspected (relevant sections or metadata)"
+    },
+    {
+      "url": "https://docs.iroh.computer/concepts/protocols.md",
+      "accessed_date_utc": "2026-10-16",
+      "bytes": 4496,
+      "sha256": "531e53274f2b35fa12a0dcd41888ad61cbd1aefc4d01b5765a955d4d0842f4a1",
+      "review": "inspected (relevant sections or metadata)"
+    },
+    {
+      "url": "https://docs.iroh.computer/concepts/relays.md",
+      "accessed_date_utc": "2026-10-16",
+      "bytes": 6888,
+      "sha256": "4fb98a459542fd9c609f445a59de26fec359e4669f60c86008dadc8ec1edb628",
+      "review": "inspected (relevant sections or metadata)"
+    },
+    {
+      "url": "https://docs.iroh.computer/concepts/security-privacy.md",
+      "accessed_date_utc": "2026-10-16",
+      "bytes": 8774,
+      "sha256": "23a7c155f91a26bf1c72d73b5b8c1aebee7d7e13ff25648c6f34be88138dcf2b",
+      "review": "inspected (relevant sections or metadata)"
+    },
+    {
+      "url": "https://docs.iroh.computer/concepts/tickets.md",
+      "accessed_date_utc": "2026-10-16",
+      "bytes": 4664,
+      "sha256": "ce627868db165dbae759ef7e7b063a323ca754fc3b7ce148d930a10128cc3ca0",
+      "review": "inspected (relevant sections or metadata)"
+    },
+    {
+      "url": "https://docs.iroh.computer/configuring-networks.md",
+      "accessed_date_utc": "2026-10-16",
+      "bytes": 23535,
+      "sha256": "7aad6ac8b10f34eea8cf885ca2320f1486ec33bce84876aac0a2ce37851cd6f5",
+      "review": "inspected (relevant sections or metadata)"
+    },
+    {
+      "url": "https://docs.iroh.computer/connect-two-endpoints.md",
+      "accessed_date_utc": "2026-10-16",
+      "bytes": 16219,
+      "sha256": "bddaf722575e56a8a6755e61f523efb6f1074231b0f454588ac945eca67d4b98",
+      "review": "collected for reference"
+    },
+    {
+      "url": "https://docs.iroh.computer/connecting/creating-endpoint.md",
+      "accessed_date_utc": "2026-10-16",
+      "bytes": 3826,
+      "sha256": "daf7dba4210d3d400bbe78d1c7fb3432a542f35f78ce89d29c347b47e90059b9",
+      "review": "inspected (relevant sections or metadata)"
+    },
+    {
+      "url": "https://docs.iroh.computer/connecting/endpoint-hooks.md",
+      "accessed_date_utc": "2026-10-16",
+      "bytes": 7827,
+      "sha256": "624412ea28c26ec1efeb3cdbb0c08da5d33d21de923940fda0d8fdd6a5dcbc57",
+      "review": "inspected (relevant sections or metadata)"
+    },
+    {
+      "url": "https://docs.iroh.computer/connecting/gossip.md",
+      "accessed_date_utc": "2026-10-16",
+      "bytes": 6987,
+      "sha256": "2d7440377d4c66416944cd69c857ea3aec3a7af15f0615a3355f16f79a7215e0",
+      "review": "inspected (relevant sections or metadata)"
+    },
+    {
+      "url": "https://docs.iroh.computer/examples.md",
+      "accessed_date_utc": "2026-10-16",
+      "bytes": 2546,
+      "sha256": "d17dcdd22593f0b30041958486342e3869cc8aaccf8b749e778bf1bfcd334c8a",
+      "review": "inspected (relevant sections or metadata)"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/n0-computer/iroh-blobs/main/Cargo.toml",
+      "accessed_date_utc": "2026-10-16",
+      "bytes": 3472,
+      "sha256": "28d77e55a9e63db65d335cadb75c07349c3b1b277298299256bc327c9918e656",
+      "review": "inspected (relevant sections or metadata)"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/n0-computer/iroh/main/iroh/Cargo.toml",
+      "accessed_date_utc": "2026-10-16",
+      "bytes": 7883,
+      "sha256": "73f9db6f53452401e2e45d1dc77644596a7b9938e12d7cfca76df126e2010f9c",
+      "review": "inspected (relevant sections or metadata)"
+    },
+    {
+      "url": "https://crates.io/api/v1/crates/iroh",
+      "accessed_date_utc": "2026-10-16",
+      "bytes": 134941,
+      "sha256": "0b03d28d568ba3cffa021f4030fc0e6f16735f3c40817d424f711cda148cfbb7",
+      "review": "inspected (relevant sections or metadata)"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/n0-computer/iroh-docs/main/Cargo.toml",
+      "accessed_date_utc": "2026-10-16",
+      "bytes": 3198,
+      "sha256": "fe5615c9318fcf5949244156c4bc51d826231185271ea47141d9ffe56891d013",
+      "review": "inspected (relevant sections or metadata)"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/n0-computer/iroh-ffi/main/Cargo.toml",
+      "accessed_date_utc": "2026-10-16",
+      "bytes": 1572,
+      "sha256": "a4cc6bf8f93e583eea957042dad4a5478cccfa053eba4daa4d48775d7ef711c3",
+      "review": "inspected (relevant sections or metadata)"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/n0-computer/iroh-gossip/main/Cargo.toml",
+      "accessed_date_utc": "2026-10-16",
+      "bytes": 4536,
+      "sha256": "f171234513b3d76fd2415ca207544bf2408682204952f55565e9c704b1434153",
+      "review": "inspected (relevant sections or metadata)"
+    },
+    {
+      "url": "https://registry.npmjs.org/@number0%2firoh/latest",
+      "accessed_date_utc": "2026-10-16",
+      "bytes": 3030,
+      "sha256": "80a8404dd89b5b88ac431a5b6abaa05527ffb432c6822f2ce853a3bb97dcee82",
+      "review": "inspected (relevant sections or metadata)"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/n0-computer/iroh/main/README.md",
+      "accessed_date_utc": "2026-10-16",
+      "bytes": 6127,
+      "sha256": "3375564eaa22eabea0d6b8440e9ef6fed2c282f24d02298e741a1d2dc05442b0",
+      "review": "inspected (relevant sections or metadata)"
+    },
+    {
+      "url": "https://api.github.com/repos/n0-computer/iroh/releases/latest",
+      "accessed_date_utc": "2026-10-16",
+      "bytes": 27924,
+      "sha256": "885bc5772b32da76e031e671cd0122eed50abd82ea2a385b6fd787fa7d52f89f",
+      "review": "inspected (relevant sections or metadata)"
+    },
+    {
+      "url": "https://docs.iroh.computer/iroh-services/relays/public.md",
+      "accessed_date_utc": "2026-10-16",
+      "bytes": 1971,
+      "sha256": "4be51f8d3de9e55b2af03e74edb824e955aede797fa14a34ea33935fb454c682",
+      "review": "inspected (relevant sections or metadata)"
+    },
+    {
+      "url": "https://docs.iroh.computer/iroh-services/relays/self-hosted.md",
+      "accessed_date_utc": "2026-10-16",
+      "bytes": 2216,
+      "sha256": "5689f62a1ff6157a0fe96b1f2ec288e6df5b931712584155c99bff22dc4156cb",
+      "review": "inspected (relevant sections or metadata)"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/n0-computer/iroh/v1.3.0/iroh/examples/echo.rs",
+      "accessed_date_utc": "2026-10-16",
+      "bytes": 4074,
+      "sha256": "4fbf466f783cae780cceb2e17278b54f9ee6f77b9a2b3dcd910a6b2ace37b624",
+      "review": "inspected (relevant sections or metadata)"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/n0-computer/iroh/v1.3.0/iroh/src/endpoint.rs",
+      "accessed_date_utc": "2026-10-16",
+      "bytes": 167408,
+      "sha256": "e3933ddc9b0aa3241c4ca97433ce93a399b10b3e37b002030e67d53fdf7e08df",
+      "review": "inspected (relevant sections or metadata)"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/n0-computer/iroh/v1.3.0/iroh/src/endpoint/presets.rs",
+      "accessed_date_utc": "2026-10-16",
+      "bytes": 6687,
+      "sha256": "e430d9a20b570dd4f2850d05c21e6a0218a41f4975dbb6b111292d15f5aa5aec",
+      "review": "inspected (relevant sections or metadata)"
+    },
+    {
+      "url": "https://docs.iroh.computer/languages/javascript.md",
+      "accessed_date_utc": "2026-10-16",
+      "bytes": 4304,
+      "sha256": "169c6847b335e040c6595d5e6d187020a24c85ccee652bae2e43467e9c32c370",
+      "review": "inspected (relevant sections or metadata)"
+    },
+    {
+      "url": "https://docs.iroh.computer/languages/python.md",
+      "accessed_date_utc": "2026-10-16",
+      "bytes": 4942,
+      "sha256": "c242f58aa701e0746a21fa5a542213bedfe4571c0aed8119d76b174754d95085",
+      "review": "inspected (relevant sections or metadata)"
+    },
+    {
+      "url": "https://docs.iroh.computer/languages/rust.md",
+      "accessed_date_utc": "2026-10-16",
+      "bytes": 2198,
+      "sha256": "38f2e85880a2affe29ef8d309866a18be6dbc7bbca6f541a0ac91ed4d7df245d",
+      "review": "inspected (relevant sections or metadata)"
+    },
+    {
+      "url": "https://docs.iroh.computer/languages/wasm-browser.md",
+      "accessed_date_utc": "2026-10-16",
+      "bytes": 4674,
+      "sha256": "582c80bfc866d7a4af48647384e6fd47826ffac066591aca93e3ff01daa1b6d7",
+      "review": "inspected (relevant sections or metadata)"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/n0-computer/iroh-ping/main/Cargo.toml",
+      "accessed_date_utc": "2026-10-16",
+      "bytes": 546,
+      "sha256": "442c64ba21821c7665ecbfa21d21f6eb1fd9cc98b958a1cf451b4251f2c6906b",
+      "review": "inspected (relevant sections or metadata)"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/n0-computer/iroh-ping/main/examples/quickstart.rs",
+      "accessed_date_utc": "2026-10-16",
+      "bytes": 3557,
+      "sha256": "805531215ccb0a76522002a47bc6c53a2fe35325f423948e4e2aed7c7d265a91",
+      "review": "inspected (relevant sections or metadata)"
+    },
+    {
+      "url": "https://docs.iroh.computer/protocols/automerge.md",
+      "accessed_date_utc": "2026-10-16",
+      "bytes": 4095,
+      "sha256": "eb0e52818feb8a7653d43c833b2d62abf8f018bd68025e7572bf420fb670143e",
+      "review": "inspected (relevant sections or metadata)"
+    },
+    {
+      "url": "https://docs.iroh.computer/protocols/blobs.md",
+      "accessed_date_utc": "2026-10-16",
+      "bytes": 15514,
+      "sha256": "6bc8a463dd90213a16e10df73705fcc31ef7dc39824a944b4ba9786d44e6e9b7",
+      "review": "inspected (relevant sections or metadata)"
+    },
+    {
+      "url": "https://docs.iroh.computer/protocols/documents.md",
+      "accessed_date_utc": "2026-10-16",
+      "bytes": 7845,
+      "sha256": "610e624a502d365b1856d772ec1752e07aa8fd1c6a8f9caf00a8897361436b87",
+      "review": "inspected (relevant sections or metadata)"
+    },
+    {
+      "url": "https://docs.iroh.computer/protocols/streaming.md",
+      "accessed_date_utc": "2026-10-16",
+      "bytes": 3111,
+      "sha256": "fcf6dfdbb1ec567e24b52dc51c9093c574ebdcb42c07850a95f1a0958ea1db12",
+      "review": "inspected (relevant sections or metadata)"
+    },
+    {
+      "url": "https://docs.iroh.computer/quickstart.md",
+      "accessed_date_utc": "2026-10-16",
+      "bytes": 2400,
+      "sha256": "3b633f500eca945330272cd9eaa77e3059b0206ca37dd564e5fdda03e18e4094",
+      "review": "inspected (relevant sections or metadata)"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/n0-computer/sendme/main/README.md",
+      "accessed_date_utc": "2026-10-16",
+      "bytes": 2981,
+      "sha256": "2aa4c34073e5f174c9f43b2f7a1a1ecc0865574ebf765467fe7ac219d34438f0",
+      "review": "inspected (relevant sections or metadata)"
+    },
+    {
+      "url": "https://docs.iroh.computer/troubleshooting.md",
+      "accessed_date_utc": "2026-10-16",
+      "bytes": 4870,
+      "sha256": "94bd1c83e0772425b22d3d764d7b0077c6bbe06d2173bbac9302aec474a790cf",
+      "review": "collected for reference"
+    },
+    {
+      "url": "https://docs.iroh.computer/what-is-iroh.md",
+      "accessed_date_utc": "2026-10-16",
+      "bytes": 10371,
+      "sha256": "63756f17e81802db446733741a7dedb832cf61667a844884f522c4a3ef48828a",
+      "review": "collected for reference"
+    },
+    {
+      "url": "https://www.iroh.computer/",
+      "accessed_date_utc": "2026-10-16",
+      "bytes": 303614,
+      "sha256": "8bcf64fb7291aefb43a3ae8ced493b63d514204997b72d8eda553754295e408d",
+      "review": "inspected visible homepage text and links"
+    }
+  ]
+}

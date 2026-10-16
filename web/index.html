@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#132f32">
+  <meta name="description" content="A small experiment connecting your phone to a sandbox with Iroh.">
+  <meta name="referrer" content="no-referrer">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'wasm-unsafe-eval'; style-src 'self'; img-src 'self' data:; connect-src 'self' https: wss:; worker-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="icon" href="./icons/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="./icons/icon-192.png">
+  <link rel="stylesheet" href="./style.css">
+  <title>Iroh lab · Pocket link</title>
+</head>
+<body>
+  <div class="page">
+    <header class="topbar">
+      <a class="brand" href="./" aria-label="Iroh lab home"><img src="./icons/icon.svg" width="34" height="34" alt=""><span>iroh<span class="brand-light"> / lab</span></span></a>
+      <span class="experiment">EXPERIMENT 001</span>
+    </header>
+    <main>
+      <section class="intro">
+        <p class="eyebrow">A LITTLE CLOSER, FROM ANYWHERE</p>
+        <h1>Your sandbox.<br><span>In your pocket.</span></h1>
+        <p class="lede">A private connection between this phone and your sandbox. Pair once, say hello, see what travels.</p>
+      </section>
+      <div class="workspace">
+        <aside class="connection-card" aria-labelledby="connection-title">
+          <div class="card-heading"><span class="step">01</span><h2 id="connection-title">Make the connection</h2></div>
+          <div class="route" aria-hidden="true"><span>YOUR PHONE</span><i></i><span>SANDBOX</span></div>
+          <div id="status-pill" class="status-pill" data-state="idle"><span class="dot"></span><span id="status" role="status">Ready to pair</span></div>
+          <p id="status-detail" class="muted">Keep the sandbox running while you connect.</p>
+          <form id="pair-form">
+            <label for="invitation">Private invitation</label>
+            <textarea id="invitation" rows="3" placeholder="Paste your invitation link…" autocomplete="off" autocapitalize="off" spellcheck="false" aria-describedby="invite-hint"></textarea>
+            <p id="invite-hint" class="hint">Open the link from your sandbox, or paste it here. Keep it between your devices.</p>
+            <div id="peer-preview" class="peer-preview" hidden><span>Sandbox fingerprint</span><code id="fingerprint"></code></div>
+            <button id="connect" class="primary" type="submit">Connect to sandbox <span aria-hidden="true">↗</span></button>
+          </form>
+          <div class="connection-actions"><button id="disconnect" class="text-button" disabled>Disconnect</button><button id="forget" class="text-button">Forget invitation</button></div>
+          <div class="metrics"><div><span class="metric-label">PATH</span><strong id="path">—</strong></div><div><span class="metric-label">ROUND TRIP</span><strong id="latency">—</strong></div><button id="ping" class="small-button" disabled>Ping ↗</button></div>
+          <p class="footnote">Encrypted end to end. Browser connections use an Iroh relay.</p>
+        </aside>
+        <section class="conversation-card" aria-labelledby="conversation-title">
+          <div class="conversation-heading"><div class="card-heading"><span class="step">02</span><h2 id="conversation-title">Say something</h2></div><span id="message-count" class="count">0 messages</span></div>
+          <div id="messages" role="log" aria-label="Conversation" aria-live="polite" aria-relevant="additions">
+            <div id="empty-state"><div class="orbit" aria-hidden="true"><span></span><i></i></div><h3>A small message.<br>A real connection.</h3><p>Your messages will appear here once you’re connected.</p></div>
+          </div>
+          <form id="send-form" class="composer"><label class="sr-only" for="message">Message to sandbox</label><textarea id="message" rows="2" maxlength="4096" placeholder="Say hello to the sandbox…" disabled></textarea><button id="send" type="submit" class="send-button" disabled aria-label="Send message">↑</button></form>
+          <p class="conversation-note">Live, temporary messages. Both devices need to be online.</p>
+        </section>
+      </div>
+      <div id="notice" role="alert" hidden></div>
+      <section class="install-note"><div><strong>Make room on your home screen.</strong><p>On iPhone: Share → Add to Home Screen. On Android: use your browser’s install menu.</p></div><button id="install" class="small-button" hidden>Install app ↗</button></section>
+      <noscript>This app needs JavaScript and WebAssembly to connect.</noscript>
+    </main>
+    <footer><span>Built to explore. Powered by Iroh.</span><a href="https://github.com/d3mnjx/iroh-lab" target="_blank" rel="noopener noreferrer">View the experiment ↗</a></footer>
+  </div>
+  <script type="module" src="./app.js"></script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+# Local credentials and runtime data
+.env
+.env.*
+!.env.example
+*.key
+runtime/
+
+# Build outputs
+/target/
+node_modules/
+dist/
+/test-results/
+/playwright-report/
